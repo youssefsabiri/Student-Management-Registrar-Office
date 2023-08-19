@@ -168,24 +168,10 @@ def check_credentials():
         voice = text_speech.getProperty('voices')  # get the available voices
         # eng.setProperty('voice', voice[0].id) #set the voice to index 0 for male voice
         text_speech.setProperty('voice', voice[1].id)
-        answer = lyrics = '''Have mercy on me, have mercy on my soul
-Don't let my heart turn cold
-Have mercy on me, have mercy on my soul
-Don't let my heart turn cold
-Have mercy on—
-Many men
-Many, many, many, many
-Wish death upon me
-Yeah, I don't cry no more
-I don't look to the sky no more
-Cause I got it on me
-I got it on me
-I got it on me
-You can run up if you want'''
-
-        messagebox.showerror("Error", "Invalid Credentials")
+        answer = "Invalid Credentials. Please try again"
         text_speech.say(answer)
         text_speech.runAndWait()
+        messagebox.showerror("Error", "Invalid Credentials")
         entry_1.delete(0, 'end')
         entry_2.delete(0, 'end')
 
